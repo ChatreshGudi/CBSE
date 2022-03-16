@@ -60,6 +60,14 @@
                 padding-right: 10px;
                 color: rgb(0, 132, 255);
             }
+            
+            div.slidecontent div{
+                display: none;
+            }
+            div.slidecontnent div.active{
+                display: block;
+            }
+
         </style>
     </head>
     <body>
@@ -74,12 +82,12 @@
         <div class = "content">
             <div class="anouncements">
                 <div class="head">
-                    <span id = "academic" class = "active" onclick="switchSection('Academic')">Academic</span>
-                    <span id = "training" onclick="switchSection('Training')">Training</span>
-                    <span id = "skill" onclick="switchSection('Skill')">Skill Education</span>
+                    <span id = "academic" class = "active" onclick="switchSection('academic')">Academic</span>
+                    <span id = "training" onclick="switchSection('training')">Training</span>
+                    <span id = "skill" onclick="switchSection('skill')">Skill Education</span>
                 </div>
                 <div class = "slidecontent">
-                    <div class="academic active" >
+                    <div class="academic active" id="contentActive">
                         <a target= "blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/25_Circular_2022.pdf"> Introduction of Samskrit (Code No.119) and English (Code No. 101) at the second level for classes IX-X from the academic session 2022-23.	</a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/23_Circular_2022.pdf"> Celebration of ‘Matribhasha Diwas’ (Mother Language day) on 21.02.2022 </a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/22_Circular_2022.pdf"> World Heritage Volunteers 2022 Campaign. </a>
@@ -103,5 +111,16 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            function switchSection(TabName){
+                let currentTab = document.getElementById("contentActive");
+                currentTab.classList.remove("active");
+                currentTab.removeAttribute("contentActive");
+                let supposedcurrentTab = document.getElementByTagName("div").getElementsByClassName(TabName);
+                supposedcurrentTab.classList.add("active");
+                supposedcurrentTab.setAttribute("id","contentActive");
+                
+            }
+        </script>
     </body>
 </html>
