@@ -116,7 +116,8 @@
                 let currentTab = document.getElementById("contentActive");
                 currentTab.classList.remove("active");
                 currentTab.removeAttribute("contentActive");
-                let supposedcurrentTab = document.getElementsByTagName("div").getElementsByClassName(TabName);
+                let query = "div."+TabName;
+                let supposedcurrentTab = document.querySelector(query);
                 supposedcurrentTab.classList.add("active");
                 supposedcurrentTab.setAttribute("id","contentActive");
 
