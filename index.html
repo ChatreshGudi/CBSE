@@ -64,7 +64,7 @@
             div.slidecontent div{
                 display: none;
             }
-            div.slidecontnent div.active{
+            div.slidecontnent div#contentActive{
                 display: block;
             }
 
@@ -87,7 +87,7 @@
                     <span id = "skill" onclick="switchSection('skill')">Skill Education</span>
                 </div>
                 <div class = "slidecontent">
-                    <div class="academic active" id="contentActive">
+                    <div class="academic content" id="contentActive">
                         <a target= "blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/25_Circular_2022.pdf"> Introduction of Samskrit (Code No.119) and English (Code No. 101) at the second level for classes IX-X from the academic session 2022-23.	</a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/23_Circular_2022.pdf"> Celebration of ‘Matribhasha Diwas’ (Mother Language day) on 21.02.2022 </a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/22_Circular_2022.pdf"> World Heritage Volunteers 2022 Campaign. </a>
@@ -96,7 +96,7 @@
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/19A_Circular_2022.pdf"> Jigyasa Vigyan Mahotsav 2022 </a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/16_Circular_2022.pdf"> Heritage India Quiz: 2021-22 </a>
                     </div>
-                    <div class="training">
+                    <div class="training content">
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/14_Notification_2022.pdf"> NISHTHA 3.0 FLN Courses 9 and 10 </a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/13_Notification_2022.pdf"> Participation of CBSE teachers, principals and counsellors in 2022 IC3 (International Career & College Counselling) Regional Forums. </a>
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/21_Circular_2022.pdf"> Training on “Hybrid Learning" teachers Schools of CBSE </a>
@@ -107,19 +107,24 @@
                         <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/05_Notification_2022.pdf"> ATL Space Challenge: List of Top 75 Innovations </a>
                         
                     </div>
-                    <div class="skill"></div>
+                    <div class="skill content"></div>
                 </div>
             </div>
         </div>
         <script type="text/javascript">
             function switchSection(TabName){
+                let contents = document.querySelectorAll("div.content");
+                console.log(contents);
+                for (i in contents){
+                    console.log(i);
+                    i.style.display = "none";
+                }
                 let currentTab = document.getElementById("contentActive");
-                currentTab.classList.remove("active");
-                currentTab.removeAttribute("contentActive");
+                currentTab.removeAttribute("id");
                 let query = "div."+TabName;
                 let supposedcurrentTab = document.querySelector(query);
-                supposedcurrentTab.classList.add("active");
                 supposedcurrentTab.setAttribute("id","contentActive");
+                supposedcurrentTab.style.display = "block";
 
             }
         </script>
