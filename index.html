@@ -116,10 +116,10 @@
                 let currentTab = document.getElementById("contentActive");
                 currentTab.classList.remove("active");
                 currentTab.removeAttribute("contentActive");
-                let supposedcurrentTab = document.getElementByTagName("div").getElementsByClassName(TabName);
+                let supposedcurrentTab = document.getElementsByTagName("div").getElementsByClassName(TabName);
                 supposedcurrentTab.classList.add("active");
                 supposedcurrentTab.setAttribute("id","contentActive");
-                
+
             }
         </script>
     </body>
