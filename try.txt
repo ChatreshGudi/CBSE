@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CBSE Navigator - Home
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            :root{
+                --blue: rgb(0, 132, 255);
+            }
+            snap-tabs {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                width: 80vw;
+                margin-left: 10vw;
+                margin-top: 5vw;
+                /* establish primary containing box */
+                overflow: hidden;
+                position: relative;
+                border: 1px solid var(--blue);
+                border-radius: 10px;
+            }
+            snap-tabs  > section {
+                    /* be pushy about consuming all space */
+                    block-size: 100%;
+                    padding: 5px;
+            }
+            snap-tabs > header {
+                    /* defend against <section> needing 100% */
+                    flex-shrink: 0;
+                    padding: 2px;
+                    /* fixes cross browser quarks */
+                    min-block-size: fit-content;
+            }
+            header {
+                display: flex;
+                flex-direction: column;
+            }
+            .scroll-snap-x {
+                /* browser decide if x is ok to scroll and show bars on, y hidden */
+                overflow: auto hidden;
+                /* prevent scroll chaining on x scroll */
+                overscroll-behavior-x: contain;
+                /* scrolling should snap children on x */
+                scroll-snap-type: x mandatory;
+
+                @media (hover: none) {
+                    scrollbar-width: none;
+
+                    &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                    }
+                }
+            }
+            nav {
+                display: flex;
+                padding: 5px;
+                justify-content: space-around;
+                position: sticky;
+            }
+            nav a {
+                    scroll-snap-align: start;
+                    color: var(--blue);
+                    display: inline-flex;
+                    align-items: center;
+                    white-space: nowrap;
+            }
+            section {
+                block-size: 100%;
+                padding: 5px;
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: 100%;
+                overflow: auto;
+            }
+
+            article {
+                scroll-snap-align: start;
+
+                overflow-y: auto;
+                overscroll-behavior-y: contain;
+            }
+            article a{
+                border: solid 1px var(--blue);
+                padding: 5px;
+                border-radius: 15px;
+                color: var(--blue);
+                width: 100%;
+                display: block;
+                justify-content: space-around;
+                text-align: center;
+            }
+            article  a:hover{
+                background: var(--blue);
+                color: white;
+            }
+            @media (prefers-reduced-motion: no-preference) {
+                .scroll-snap-x {
+                    scroll-behavior: smooth;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <span id = "title">CBSE Resources</span>
+            <a href = "index.html" class ="active">Home</a>
+            <a href = "Books.html">Text Books</a>
+            <a href = "SM.html">Study Material</a>
+            <a href = "Others.html">Other</a>
+            <a href = "Contact.html">Contact CBSE</a>
+        </div>
+        <snap-tabs>
+            <header>
+              <nav>
+                <a href = "#academic"> Academic </a>
+                <a href = "#training"> Training </a>
+                <a href = "#skill"> Skill </a>
+              </nav>
+            </header>
+            <section>
+              <article id = "academic">
+                <a target= "blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/25_Circular_2022.pdf"> Introduction of Samskrit (Code No.119) and English (Code No. 101) at the second level for classes IX-X from the academic session 2022-23.	</a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/23_Circular_2022.pdf"> Celebration of ‘Matribhasha Diwas’ (Mother Language day) on 21.02.2022 </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/22_Circular_2022.pdf"> World Heritage Volunteers 2022 Campaign. </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/20_Circular_2022.pdf">  Principals’ / Teachers’ Consultation for CBSE Learning Standards Frameworks of Classes IX-X	 </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/19B_Circular_2022.pdf"> CSIR Innovation Award for School Children (CIASC 2022) </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/19A_Circular_2022.pdf"> Jigyasa Vigyan Mahotsav 2022 </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/16_Circular_2022.pdf"> Heritage India Quiz: 2021-22 </a>
+              </article>
+              <article id = "training">
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/14_Notification_2022.pdf"> NISHTHA 3.0 FLN Courses 9 and 10 </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/13_Notification_2022.pdf"> Participation of CBSE teachers, principals and counsellors in 2022 IC3 (International Career & College Counselling) Regional Forums. </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/21_Circular_2022.pdf"> Training on “Hybrid Learning" teachers Schools of CBSE </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Circulars/2022/18_Circular_2022.pdf"> Free Online Teachers’ Training Programme on ‘Conducive Learning Environment’. </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/12_Notification_2022.pdf"> Teachers Training of Employability Skills component of Skill Courses </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/10_Notification_2022.pdf"> Capacity Building Programmes (CBPs) for teachers teaching Artificial Intelligence in Class XI & XII in collaboration with IBM </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/06_Notification_2022.pdf"> Online Teachers Training Programme for 'Banking' Skill Subjects at Senior Secondary Level (Class-XI-XII) </a>
+                <a target="blank" href = "https://cbseacademic.nic.in/web_material/Notifications/2022/05_Notification_2022.pdf"> ATL Space Challenge: List of Top 75 Innovations </a>
+              </article>
+              <article id = "skill"></article>
+            </section>
+        </snap-tabs>
+        <script>
+            
+        </script>
+    </body>
+</html>
