@@ -2,10 +2,61 @@
 <html>
     <head>
         <title>
-            CBSE Navigator - Home
+            CBSE Resources
         </title>
         <link rel="stylesheet" href="style.css">
+
+        <style>
+            :root{
+                --blue: rgb(0, 132, 255);
+            }
+            div.filterbar{
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 10px;
+                border: 2px solid var(--blue);
+                border-radius: 25px;
+                padding: 10px;
+            }
+            .input{
+                color: var(--blue);
+                border: 2px solid var(--blue);
+                border-radius: 15px;
+                font-size: 15px;
+                padding: 5px;
+                outline: none;
+                background-color: white;
+            }
+            /* .input:hover{
+                background-color: var(--blue);
+                color: white;
+            } */
+            .btn{
+                background-color: var(--blue);
+                color: white;
+                border: 2px solid var(--blue);
+                border-radius: 15px;
+                font-size: 15px;
+                padding: 5px;
+                cursor: pointer;
+            }
+            .btn:hover{
+                background-color: white;
+                color: var(--blue);
+            }
+            .books{
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 10px;
+                border: 2px solid var(--blue);
+                border-radius: 25px;
+                padding: 10px;
+                height: 80vh;
+                text-align: center;
+            }
+        </style>
     </head>
+    
     <body>
         <div class="navbar">
             <span id = "title">CBSE Resources</span>
@@ -16,8 +67,94 @@
             <a href = "Contact.html">Contact CBSE</a>
         </div>
         <div class = "content">
-
+            <div class="filterbar">
+                <input class = "input" id = "sname" type="text" placeholder = "Please enter the name of the book.">
+                <input class = "input" type="number" name="class" id="class" min =1 max = 12 placeholder = "Class">
+                <select class = "input" id = "subject">
+                    <option disabled>Select your Subject</option>
+                    <option value="maths">Mathematics</option>
+                    <optgroup label = "Science">
+                        <option value = "science">All Science</option>
+                        <option value = "physics">Physics</option>
+                        <option value = "chem">Chemistry</option>
+                        <option value = "bio">Biology</option>
+                    </optgroup>
+                    <optgroup label = "Social Science">
+                        <option value = "sst">All Social Science</option>
+                        <option value = "geo">Geography</option>
+                        <option value = "history">History</option>
+                        <option value = "civics">Civics</option>
+                        <option value = "econ">Economics</option>
+                    </optgroup>
+                    <optgroup label = "Languages">
+                        <option value="lang">All Languages</option>
+                        <option value="eng">English</option>
+                        <optgroup label = "Hindi">
+                            <option value="ha">Hindi A</option>
+                            <option value="hb">Hindi B</option>
+                        </optgroup>                        
+                        <option value="urdu">Urdu</option>
+                        <option value="sanskrit">Sanskrit</option>
+                    </optgroup>
+                    <option>Health and Physical Education</option>
+                </select>
+                <select class = "input" id = "lang">
+                    <option value ="el" >English</option>
+                    <option value="hl">Hindi</option>
+                    <option value="ul">Urdu</option>
+                </select>
+                <button class = "btn" type ="button">Search Books</button>
+            </div>
+            <div class = "books" id = "books">
+                Select your filters.
+            </div>
         </div>
+        <script>
+            var books ={
+                1:{
+                    English: {
+                        el:{
+                            Marigold: {
+                                Prelims: "https://ncert.nic.in/textbook/pdf/aeen1ps.pdf",
+                                CH1: "https://ncert.nic.in/textbook/pdf/aeen101.pdf",
+                                CH2: "https://ncert.nic.in/textbook/pdf/aeen102.pdf",
+                                CH3: "https://ncert.nic.in/textbook/pdf/aeen103.pdf",
+                                CH4: "https://ncert.nic.in/textbook/pdf/aeen104.pdf",
+                                CH5: "https://ncert.nic.in/textbook/pdf/aeen105.pdf",
+                                CH6: "https://ncert.nic.in/textbook/pdf/aeen106.pdf",
+                                CH7: "https://ncert.nic.in/textbook/pdf/aeen107.pdf",
+                                CH8: "https://ncert.nic.in/textbook/pdf/aeen108.pdf",
+                                CH9: "https://ncert.nic.in/textbook/pdf/aeen109.pdf",
+                                CH10: "https://ncert.nic.in/textbook/pdf/aeen110.pdf",
+                                Download: "https://ncert.nic.in/textbook/pdf/aeen1dd.zip"
+                            },
+                            RainDrops:{
+                                Prelims: "https://ncert.nic.in/textbook/pdf/aerd1ps.pdf",
+                                CH1: "https://ncert.nic.in/textbook/pdf/aerd101.pdf",
+                                CH2: "https://ncert.nic.in/textbook/pdf/aerd102.pdf",
+                                CH3: "https://ncert.nic.in/textbook/pdf/aerd103.pdf",
+                                CH4: "https://ncert.nic.in/textbook/pdf/aerd104.pdf",
+                                CH5: "https://ncert.nic.in/textbook/pdf/aerd105.pdf",
+                                CH6: "https://ncert.nic.in/textbook/pdf/aerd106.pdf",
+                                CH7: "https://ncert.nic.in/textbook/pdf/aerd107.pdf",
+                                CH8: "https://ncert.nic.in/textbook/pdf/aerd108.pdf",
+                                CH9: "https://ncert.nic.in/textbook/pdf/aerd109.pdf",
+                                CH10: "https://ncert.nic.in/textbook/pdf/aerd110.pdf",
+                                CH11: "https://ncert.nic.in/textbook/pdf/aerd111.pdf",
+                                CH12: "https://ncert.nic.in/textbook/pdf/aerd112.pdf",
+                                CH13: "https://ncert.nic.in/textbook/pdf/aerd113.pdf",
+                                CH14: "https://ncert.nic.in/textbook/pdf/aerd114.pdf",
+                                CH15: "https://ncert.nic.in/textbook/pdf/aerd115.pdf",
+                                CH16: "https://ncert.nic.in/textbook/pdf/aerd116.pdf",
+                                CH17: "https://ncert.nic.in/textbook/pdf/aerd117.pdf",
+                                CH18: "https://ncert.nic.in/textbook/pdf/aerd118.pdf",
+                                CH19: "https://ncert.nic.in/textbook/pdf/aerd119.pdf",
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 
 </html>
