@@ -21,6 +21,9 @@ div.navbar{
     margin: 0px;
     padding:10px;
     border-radius: 10px;
+    top:0px;
+    position: sticky;
+    box-shadow: 0px 0px 5px var(--blue);
 }
 
 div.navbar span{
@@ -74,10 +77,40 @@ div.navbar a.active:hover{
 
 }
 
-/* div.content{
-    overflow: hidden;
-    display:flex;
-} */
+div.copyright{
+    bottom: 0px;
+    position: fixed;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid var(--blue);
+    width:90%;
+    margin-left: 5%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px var(--blue);
+}
+
+div.copyright a{
+    border: 1px solid var(--blue);
+    border-radius: 25px;
+    padding: 15px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.copyright a:hover{
+    background-color: white;
+    color: var(--blue);
+}
+
+div.copyright p{
+    color: var(--blue);
+    font-size: 15px;
+}
 
 /* Animations */
 
