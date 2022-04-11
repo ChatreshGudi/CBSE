@@ -6,9 +6,6 @@
         </title>
         <link rel="stylesheet" href="style.css">
         <style>
-            :root{
-                --blue: rgb(0, 132, 255);
-            }
             snap-tabs {
                 display: flex;
                 flex-direction: column;
@@ -95,7 +92,7 @@
             }
             article  a:hover{
                 background: var(--blue);
-                color: white;
+                color: var(--theme);
             }
             @media (prefers-reduced-motion: no-preference) {
                 .scroll-snap-x {
@@ -104,6 +101,7 @@
             }
 
         </style>
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -113,6 +111,7 @@
             <a href = "SM.html">Study Material</a>
             <a href = "Others.html">Other</a>
             <a href = "Contact.html">Contact CBSE</a>
+            <button type="button" id = "theme" onclick="switchTheme()">Switch Theme</button>
         </div>
         <snap-tabs>
             <header>

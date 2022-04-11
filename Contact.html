@@ -7,24 +7,24 @@
         <link rel="stylesheet" href="style.css">
         <style>
             td{
-                color: rgb(0, 132, 255);
-                border: solid 1px rgb(0, 132, 255);
+                color: var(--blue);
+                border: solid 1px var(--blue);
                 padding: 10px;
                 border-radius: 15px;
             }
             td.highlight{
-                background: rgb(0, 132, 255);
-                color: white;
+                background: var(--blue);
+                color: var(--theme);
                 font-weight: bold;
                 padding: 10px;
                 border-radius: 15px;
                 text-align: center;
             }
             td a{
-                color: rgb(0, 132, 255);
+                color: var(--blue);
             }
         </style>
-
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -34,13 +34,14 @@
             <a href = "SM.html">Study Material</a>
             <a href = "Others.html">Other</a>
             <a href = "Contact.html" class ="active">Contact CBSE</a>
+            <button type="button" id = "theme" onclick="switchTheme()">Switch Theme</button>
         </div>
         <div class = "content">
-            <div align = "center" style="color:rgb(0, 132, 255) ;display: block; font-size: 40px; font-family: arial; padding: 5px;">Contact CBSE</div><br>
-            <table align="center" style = "border: solid 2px rgb(0, 132, 255); padding: 10px;border-radius: 15px;">
+            <div align = "center" style="color:var(--blue) ;display: block; font-size: 40px; font-family: arial; padding: 5px;">Contact CBSE</div><br>
+            <table align="center" style = "border: solid 2px var(--blue); padding: 10px;border-radius: 15px;">
                 <tr>
                     <td colspan = 2 style = "border: none;">
-                        <iframe style = "width: 100%; border: solid 1px rgb(0, 132, 255); border-radius: 15px;;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14007.79260701979!2d77.237602!3d28.631316!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c488266f21a60d9!2sCentral%20Board%20of%20Secondary%20Education!5e0!3m2!1sen!2sin!4v1646033510074!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe style = "width: 100%; border: solid 1px var(--blue); border-radius: 15px;;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14007.79260701979!2d77.237602!3d28.631316!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c488266f21a60d9!2sCentral%20Board%20of%20Secondary%20Education!5e0!3m2!1sen!2sin!4v1646033510074!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </td>
                 </tr>
                 <tr>

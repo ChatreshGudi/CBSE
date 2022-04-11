@@ -1,6 +1,9 @@
 :root{
-    --blue:rgb(0, 132, 255);
-    --gradblue:linear-gradient(to bottom right, rgb(0, 132, 255), rgb(0, 89, 255));
+    --blue:rgb(0, 153, 255);
+    --gradblue:linear-gradient(to bottom, rgb(45, 154, 255), rgb(0, 55, 158));
+    /* dark => rgb(28, 27, 34)
+       light => white*/
+    --theme: rgb(42, 41, 48);
 }
 
 html, body{
@@ -8,10 +11,25 @@ html, body{
     width: 100vw;
     padding:0%;
     margin: 0;
+    background-color: var(--theme);
 }
 
 * {
     box-sizing: border-box;
+}
+
+#theme{
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--theme);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--theme);
+    float: inline-end;
+
+}
+#theme:hover{
+    background-color: var(--theme);
+    color: var(--blue);
 }
 
 div.navbar{
@@ -20,7 +38,8 @@ div.navbar{
     background-image: linear-gradient(to bottom right, rgb(0, 132, 255), rgb(0, 89, 255));
     margin: 0px;
     padding:10px;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     top:0px;
     position: sticky;
     box-shadow: 0px 0px 5px var(--blue);
@@ -35,7 +54,7 @@ div.navbar span{
 
 div.navbar a{
     float: left;
-    color: #ffffff;
+    color: var(--theme);
     text-align: center;
     padding:15px;
     text-decoration: none;
@@ -45,13 +64,12 @@ div.navbar a{
 
 div.navbar a:hover{
     float: left;
-    color: var(--blue);
     text-align: center;
     padding:15px;
     text-decoration: none;
     font-size: 18px;
-    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
+    border: 1px solid var(--theme);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     animation: inactivehover 0.5s 1;
@@ -59,13 +77,13 @@ div.navbar a:hover{
 
 div.navbar a.active{
     color: var(--blue);
-    background: #ffffff;
+    background: var(--theme);
     border-radius: 10px;
 }
 
 div.navbar a.active:hover{
     color: var(--blue);
-    background: #ffffff;
+    background: var(--theme);
     border-radius: 5px;
     animation: activehover 0.3s 1;
     
@@ -73,7 +91,7 @@ div.navbar a.active:hover{
 }
 
 #title{
-    color: rgb(255, 255, 255);
+    color: var(--theme);
 
 }
 
@@ -83,7 +101,7 @@ div.copyright{
     padding: 5px;
     display: flex;
     justify-content: space-around;
-    background: white;
+    background: var(--theme);
     border: 1px solid var(--blue);
     width:98%;
     margin-left: 1%;
@@ -96,14 +114,14 @@ div.copyright a{
     border-radius: 25px;
     padding: 15px;
     background-color: var(--blue);
-    color: white;
+    color: var(--theme);
     font-size: 15px;
     text-align: center;
     text-decoration: none;
 }
 
 div.copyright a:hover{
-    background-color: white;
+    background-color: var(--theme);
     color: var(--blue);
 }
 
@@ -126,12 +144,12 @@ div.copyright p{
 
 @keyframes inactivehover{
     0%{
-        background: rgba(255, 255, 255, 0);
-        color: white;
+        border: 1px solid var(--theme);
+        color: var(--theme);
     }
     100%{
-        background: rgba(255, 255, 255, 0.8);
-        color: var(--blue);
+        border: 1px solid var(--theme);
+        color: var(--theme);
         font-weight: bold;
     }
 }

@@ -5,10 +5,10 @@
             CBSE Resources
         </title>
         <link rel="stylesheet" href="style.css">
-
         <style>
             :root{
-                --blue: rgb(0, 132, 255);
+                /* --blue: rgb(0, 132, 255); */
+                /* --theme: black; */
             }
             .content{
                 display: grid;
@@ -32,7 +32,7 @@
                 font-size: 15px;
                 padding: 5px;
                 outline: none;
-                background-color: white;
+                background-color: var(--theme);
                 display: block;
                 overflow: auto;
                 /* flex-direction: column;
@@ -45,11 +45,11 @@
             }
             /* .input:hover{
                 background-color: var(--blue);
-                color: white;
+                color: var(--theme);
             } */
             .btn{
                 background-color: var(--blue);
-                color: white;
+                color: var(--theme);
                 border: 2px solid var(--blue);
                 border-radius: 15px;
                 font-size: 15px;
@@ -58,7 +58,7 @@
                 width: 100%;
             }
             .btn:hover{
-                background-color: white;
+                background-color: var(--theme);
                 color: var(--blue);
             }
             .books{
@@ -86,6 +86,7 @@
             }
 
         </style>
+        <script src="script.js"></script>
     </head>
     
     <body>
@@ -96,6 +97,7 @@
             <a href = "SM.html">Study Material</a>
             <a href = "Others.html">Other</a>
             <a href = "Contact.html">Contact CBSE</a>
+            <button type="button" id = "theme" onclick="switchTheme()">Switch Theme</button>
         </div>
         <div class = "content">
                 <div class = "filterbar">
