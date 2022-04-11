@@ -10,6 +10,11 @@
             :root{
                 --blue: rgb(0, 132, 255);
             }
+            .content{
+                display: grid;
+                grid-template-columns: 500px auto;
+
+            }
             div.filterbar{
                 width: 80%;
                 margin-left: 10%;
@@ -17,6 +22,8 @@
                 border: 2px solid var(--blue);
                 border-radius: 25px;
                 padding: 10px;
+                height: 90%;
+                overflow: auto;
             }
             .input{
                 color: var(--blue);
@@ -26,6 +33,15 @@
                 padding: 5px;
                 outline: none;
                 background-color: white;
+                display: block;
+                overflow: auto;
+                /* flex-direction: column;
+                justify-items: flex-start; */
+
+            }
+            input [type=checkbox]{
+                vertical-align: middle;
+                position: relative;
             }
             /* .input:hover{
                 background-color: var(--blue);
@@ -39,6 +55,7 @@
                 font-size: 15px;
                 padding: 5px;
                 cursor: pointer;
+                width: 100%;
             }
             .btn:hover{
                 background-color: white;
@@ -54,6 +71,20 @@
                 height: 80vh;
                 text-align: center;
             }
+
+            #subject{
+                height: 35%;
+
+            }
+
+            #lang{
+                height: 15%;
+            }
+
+            #std{
+                height: 35%;
+            }
+
         </style>
     </head>
     
@@ -67,43 +98,48 @@
             <a href = "Contact.html">Contact CBSE</a>
         </div>
         <div class = "content">
-            <div class="filterbar">
-                <input class = "input" id = "sname" type="text" placeholder = "Please enter the name of the book.">
-                <input class = "input" type="number" name="class" id="class" min =1 max = 12 placeholder = "Class">
-                <select class = "input" id = "subject">
-                    <option disabled>Select your Subject</option>
-                    <option value="maths">Mathematics</option>
-                    <optgroup label = "Science">
-                        <option value = "science">All Science</option>
-                        <option value = "physics">Physics</option>
-                        <option value = "chem">Chemistry</option>
-                        <option value = "bio">Biology</option>
-                    </optgroup>
-                    <optgroup label = "Social Science">
-                        <option value = "sst">All Social Science</option>
-                        <option value = "geo">Geography</option>
-                        <option value = "history">History</option>
-                        <option value = "civics">Civics</option>
-                        <option value = "econ">Economics</option>
-                    </optgroup>
-                    <optgroup label = "Languages">
-                        <option value="lang">All Languages</option>
-                        <option value="eng">English</option>
-                        <optgroup label = "Hindi">
-                            <option value="ha">Hindi A</option>
-                            <option value="hb">Hindi B</option>
-                        </optgroup>                        
-                        <option value="urdu">Urdu</option>
-                        <option value="sanskrit">Sanskrit</option>
-                    </optgroup>
-                    <option>Health and Physical Education</option>
-                </select>
-                <select class = "input" id = "lang">
-                    <option value ="el" >English</option>
-                    <option value="hl">Hindi</option>
-                    <option value="ul">Urdu</option>
-                </select>
-                <button class = "btn" type ="button">Search Books</button>
+                <div class = "filterbar">
+                    <button class = "btn" type ="button" onclick="searchBooks()">Search Books</button> <br>
+                    <div class = "input" id = "subject">
+                        <p>Subjects</p>
+                        <input type = "checkbox" value="maths">Mathematics</input>  <br> 
+                        <input type = "checkbox" value = "physics">Physics</input>  <br>
+                        <input type = "checkbox" value = "chem">Chemistry</input>  <br>
+                        <input type = "checkbox" value = "bio">Biology</input>  <br>
+                        <input type = "checkbox" value = "geo">Geography</input>  <br>
+                        <input type = "checkbox" value = "history">History</input>  <br>
+                        <input type = "checkbox" value = "civics">Civics</input>  <br>
+                        <input type = "checkbox" value = "econ">Economics</input>  <br>
+                        <input type = "checkbox" value="eng">English</input>  <br>
+                        <input type = "checkbox" value="ha">Hindi A</input>  <br>
+                        <input type = "checkbox" value="hb">Hindi B</input>  <br>                
+                        <input type = "checkbox" value="urdu">Urdu</input>  <br>
+                        <input type = "checkbox" value="sanskrit">Sanskrit</input>  <br>
+                        <input type ="checkbox" value = "phe">Health and Physical Education</input>  <br>
+                    </div><br>
+
+                    <div class = "input" id = "lang">
+                        <p>Language</p>
+                        <input type = "checkbox" value ="el" >English</input>
+                        <input type = "checkbox" value="hl">Hindi</input>
+                        <input type = "checkbox" value="ul">Urdu</option>
+                    </div> <br>
+                    <div class = "input" id="std">
+                        <p>Class</p>
+                        <input type="checkbox" value="1">1</input> <br>
+                        <input type="checkbox" value="2">2</input> <br>
+                        <input type="checkbox" value="3">3</input> <br>
+                        <input type="checkbox" value="4">4</input> <br>
+                        <input type="checkbox" value="5">5</input> <br>
+                        <input type="checkbox" value="6">6</input> <br>
+                        <input type="checkbox" value="7">7</input> <br>
+                        <input type="checkbox" value="8">8</input> <br>
+                        <input type="checkbox" value="9">9</input> <br>
+                        <input type="checkbox" value="10">10</input> <br>
+                        <input type="checkbox" value="11">11</input> <br>
+                        <input type="checkbox" value="12">12</input> <br>
+                    </div> <br>
+                    
             </div>
             <div class = "books" id = "books">
                 Select your filters.
@@ -157,6 +193,9 @@
                         }
                     }
                 }
+            };
+            function searchBooks(){
+                let subjects =[];
             }
         </script>
     </body>

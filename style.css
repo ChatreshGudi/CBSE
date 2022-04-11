@@ -80,13 +80,13 @@ div.navbar a.active:hover{
 div.copyright{
     bottom: 0px;
     position: fixed;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    background: white;
     border: 1px solid var(--blue);
-    width:90%;
-    margin-left: 5%;
+    width:98%;
+    margin-left: 1%;
     border-radius: 25px;
     box-shadow: 0px 0px 5px var(--blue);
 }
