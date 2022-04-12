@@ -35,18 +35,12 @@
                 background-color: var(--theme);
                 display: block;
                 overflow: auto;
-                /* flex-direction: column;
-                justify-items: flex-start; */
 
             }
             input [type=checkbox]{
                 vertical-align: middle;
                 position: relative;
             }
-            /* .input:hover{
-                background-color: var(--blue);
-                color: var(--theme);
-            } */
             .btn{
                 background-color: var(--blue);
                 color: var(--theme);
@@ -73,7 +67,7 @@
             }
 
             #subject{
-                height: 35%;
+                height: 45%;
 
             }
 
@@ -82,7 +76,50 @@
             }
 
             #std{
-                height: 35%;
+                height: 45%;
+            }
+
+            .book{
+                border: 1px solid var(--blue);
+                background-color: rgba(0, 0, 0, 0);
+                border-radius: 15px;
+                width: 200px;
+                padding: 10px;
+                color: var(--blue);
+            }
+
+            .book img{
+                border-radius: 15px;
+            }
+
+            .book button{
+                border: 1px solid var(--blue);
+                background-color: var(--theme);
+                border-radius: 10px;
+                color: var(--blue);
+                cursor: pointer;
+            }
+
+            .book button:hover{
+                color: var(--theme);
+                background-color: var(--blue);
+            }
+
+            button.activelang{
+                color: var(--theme);
+                background-color: var(--blue);
+            }
+
+            button.activelang:hover{
+                color: var(--blue);
+                background-color: var(--theme);
+            }
+
+            .book div{
+                display: flex;
+                
+                width: 100%;
+                justify-content: space-around;
             }
 
         </style>
@@ -120,13 +157,6 @@
                         <input type = "checkbox" value="sanskrit">Sanskrit</input>  <br>
                         <input type = "checkbox" value = "phe">Health and Physical Education</input>  <br>
                     </div><br>
-
-                    <div class = "input" id = "lang">
-                        <p>Language</p>
-                        <input type = "checkbox" value ="el" >English</input>
-                        <input type = "checkbox" value="hl">Hindi</input>
-                        <input type = "checkbox" value="ul">Urdu</option>
-                    </div> <br>
                     <div class = "input" id="std">
                         <p>Class</p>
                         <input type="checkbox" value="1">1</input> <br>
@@ -144,7 +174,16 @@
                     </div> <br>
             </div>
             <div class = "books" id = "books">
-                Select your filters.
+                <div class = "book">
+                    <img src="https://ncert.nic.in/textbook/pdf/aeen1cc.jpg" height="200px">
+                    <div>
+                        <button type="button" class="activelang">English</button>
+                        <button type="button">Hindi</button>                        
+                        <button type="button">Urdu</button>                        
+                    </div>
+                    <p>Marigold</p>
+                    
+                </div>
             </div>
         </div>
         <div class = "copyright"> 
@@ -222,8 +261,6 @@
             function searchBooks(){
                 let subjects = document.getElementById("subject").querySelectorAll("input");
                 subjects = isChecked(subjects);
-                let lang = document.getElementById("lang").querySelectorAll("input");
-                lang = isChecked(lang);
                 let std = document.getElementById("std").querySelectorAll("input");
                 std = isChecked(std);
                 if (std == []){
@@ -232,12 +269,9 @@
                 let booksls =[];
                 for (const i in std){
                     for (const j in subjects){
-                        for (const k in lang){
-                            try {
-                                booksls.push(books[std[i]][subjects[j]][lang[k]]);
-                            } catch (error) {
-                            }
-                            
+                        try {
+                            booksls.push(books[std[i]][subjects[j]]);
+                        } catch (error) {
                         }
                     }
                 }
