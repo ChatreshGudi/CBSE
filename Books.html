@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            CBSE Resources
+            CBSE Resources - Books
         </title>
         <link rel="stylesheet" href="style.css">
         <style>
@@ -95,6 +95,7 @@
             <a href = "index.html">Home</a>
             <a href = "Books.html" class ="active">Text Books</a>
             <a href = "SM.html">Study Material</a>
+            <a href = "Courses.html">Courses</a>
             <a href = "Others.html">Other</a>
             <a href = "Contact.html">Contact CBSE</a>
             <button type="button" id = "theme" onclick="switchTheme()">Switch Theme</button>
@@ -117,7 +118,7 @@
                         <input type = "checkbox" value="hb">Hindi B</input>  <br>                
                         <input type = "checkbox" value="urdu">Urdu</input>  <br>
                         <input type = "checkbox" value="sanskrit">Sanskrit</input>  <br>
-                        <input type ="checkbox" value = "phe">Health and Physical Education</input>  <br>
+                        <input type = "checkbox" value = "phe">Health and Physical Education</input>  <br>
                     </div><br>
 
                     <div class = "input" id = "lang">
@@ -141,7 +142,6 @@
                         <input type="checkbox" value="11">11</input> <br>
                         <input type="checkbox" value="12">12</input> <br>
                     </div> <br>
-                    
             </div>
             <div class = "books" id = "books">
                 Select your filters.
@@ -154,9 +154,10 @@
         <script>
             var books ={
                 1:{
-                    English: {
+                    eng: {
                         el:{
                             Marigold: {
+                                CoverPage: "https://ncert.nic.in/textbook/pdf/aeen1cc.jpg",
                                 Prelims: "https://ncert.nic.in/textbook/pdf/aeen1ps.pdf",
                                 CH1: "https://ncert.nic.in/textbook/pdf/aeen101.pdf",
                                 CH2: "https://ncert.nic.in/textbook/pdf/aeen102.pdf",
@@ -171,6 +172,7 @@
                                 Download: "https://ncert.nic.in/textbook/pdf/aeen1dd.zip"
                             },
                             RainDrops:{
+                                CoverPage: "https://ncert.nic.in/textbook/pdf/aerd1cc.jpg",
                                 Prelims: "https://ncert.nic.in/textbook/pdf/aerd1ps.pdf",
                                 CH1: "https://ncert.nic.in/textbook/pdf/aerd101.pdf",
                                 CH2: "https://ncert.nic.in/textbook/pdf/aerd102.pdf",
@@ -193,11 +195,63 @@
                                 CH19: "https://ncert.nic.in/textbook/pdf/aerd119.pdf",
                             }
                         }
+                    },
+                    maths:{
+                        el:{
+                            Math_Magic:{
+                                CoverPage:"https://ncert.nic.in/textbook/pdf/aemh1cc.jpg",
+                                Prelims: "https://ncert.nic.in/textbook/pdf/aemh1ps.pdf",
+                                CH1: {name:"Shapes and Space", link: "https://ncert.nic.in/textbook/pdf/aemh101.pdf"},
+                                CH2: {name:"Numbers From One To Nine", link: "https://ncert.nic.in/textbook/pdf/aemh102.pdf"},
+                                CH3: {name:"Addition", link: "https://ncert.nic.in/textbook/pdf/aemh103.pdf"},
+                                CH4: {name:"Subtraction", link: "https://ncert.nic.in/textbook/pdf/aemh104.pdf"},
+                                CH5: {name:"Numbers From Ten To Twenty", link: "https://ncert.nic.in/textbook/pdf/aemh105.pdf"},
+                                CH6: {name:"Time", link: "https://ncert.nic.in/textbook/pdf/aemh106.pdf"},
+                                CH7: {name:"Measurement", link: "https://ncert.nic.in/textbook/pdf/aemh107.pdf"},
+                                CH8: {name:"Numbers From Twenty One To Fifty", link: "https://ncert.nic.in/textbook/pdf/aemh108.pdf"},
+                                CH9: {name:"Data Handling", link: "https://ncert.nic.in/textbook/pdf/aemh109.pdf"},
+                                CH10: {name:"Patterns", link: "https://ncert.nic.in/textbook/pdf/aemh110.pdf"},
+                                CH11: {name:"Numbers", link: "https://ncert.nic.in/textbook/pdf/aemh111.pdf"},
+                                CH12: {name:"Money", link: "https://ncert.nic.in/textbook/pdf/aemh112.pdf"},
+                                CH13: {name:"How Many", link: "https://ncert.nic.in/textbook/pdf/aemh113.pdf"}
+                            }
+                        }
                     }
                 }
             };
             function searchBooks(){
-                let subjects =[];
+                let subjects = document.getElementById("subject").querySelectorAll("input");
+                subjects = isChecked(subjects);
+                let lang = document.getElementById("lang").querySelectorAll("input");
+                lang = isChecked(lang);
+                let std = document.getElementById("std").querySelectorAll("input");
+                std = isChecked(std);
+                if (std == []){
+                    std = [1,2,3,4,5,6,7,8,9,10];
+                }
+                let booksls =[];
+                for (const i in std){
+                    for (const j in subjects){
+                        for (const k in lang){
+                            try {
+                                booksls.push(books[std[i]][subjects[j]][lang[k]]);
+                            } catch (error) {
+                            }
+                            
+                        }
+                    }
+                }
+                console.log(booksls);
+            }
+
+            function isChecked(checks){
+                checked = [];
+                for (let i in checks){
+                    if (checks[i].checked == true){
+                        checked.push(checks[i].value);
+                    }
+                }
+                return checked;
             }
         </script>
     </body>
